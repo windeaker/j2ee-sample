@@ -8,8 +8,17 @@
     <artifactId>spring-cloud-sample1</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>dao</module>
-        <module>eureka-single-7001</module>
+        <module>eureka-single-7000</module>
+        <module>eureka-dual-7001</module>
+        <module>eureka-dual-7002</module>
+        <module>eureka-cluster-7003</module>
+        <module>eureka-cluster-7004</module>
+        <module>eureka-cluster-7005</module>
+        <module>producer-hello-7010</module>
+        <module>consumer-hello-type1-7021</module>
+        <module>consumer-hello-typeb-7022</module>
+        <module>consumer-hello-typec-7023</module>
+        <module>consumer-hello-typea-7021</module>
     </modules>
 
     <parent>
