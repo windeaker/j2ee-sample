@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: config-server-git
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/windeaker/j2ee-sample
+          search-paths: spring-cloud-sample1/config-repo
+          host-key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTjEzgORwVEqrv/U1u0lnfYq1ExfF8YUS8CbgxXycKNtYjBgGQlYA644JiPznjmTf96Ja+I0SGg5J07o3ue2QhXxQwXWIWAXJyC2P6CYTm+Fv3XIA11waXbZXLOPXCnDQS09Wr6iN/ehcJq7YrGEo2A9EUP7rFRNJA8iQ+rL7m7JEb0WcyMttLiGXplhr1wXqAivVMg4aS+0wk3e3q47ACnZARjqpHF0wJLnGQgY8afCC5zVWA72/5+aDc+q4mbw9J5Tg+xJHWhoF39fLJPQ0q8GzvSIxZsQi3zoI3D5+CK3A/9L7bXDJ1PlJwCpSxjzarGEFFZZPcOxPx5+mEVUPp windeaker@windeaker-PC
+
+server:
+  port: 12000

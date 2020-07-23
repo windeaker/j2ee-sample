@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: hytrix-dashboard-7030
+server:
+  port: 7030

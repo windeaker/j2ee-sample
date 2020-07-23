@@ -19,6 +19,13 @@
         <module>consumer-hello-typeb-7022</module>
         <module>consumer-hello-typec-7023</module>
         <module>consumer-hello-typea-7021</module>
+        <module>config-server-git</module>
+        <module>config-client-git</module>
+        <module>zuul-gateway-8080</module>
+        <module>consumer-hello-feign-hystrix</module>
+        <module>hystrix-dashboard</module>
+        <module>consumer-hello-feign-hytrix-7024</module>
+        <module>hytrix-dashboard-7030</module>
     </modules>
 
     <parent>

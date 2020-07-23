@@ -11,6 +11,8 @@
     <modules>
         <module>security-sample1</module>
         <module>websocket-sample1</module>
+        <module>webflux-sample1</module>
+        <module>web-async-task-sample1</module>
     </modules>
 
     <dependencyManagement>
@@ -21,6 +23,20 @@
                 <version>2.2.2.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!-- mybatis2.1 兼容spring boot 2.1 or higher -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>2.1.1</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.20</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

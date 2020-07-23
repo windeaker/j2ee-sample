@@ -1,0 +1,12 @@
+server:
+  port: 7024
+
+spring:
+  application:
+    name: eureka-consumer-hello-feign-hytrix-7024
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7000/eureka/
+    # 是否启用服务注册与发现，默认为true
+    enabled: true
