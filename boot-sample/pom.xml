@@ -13,6 +13,10 @@
         <module>websocket-sample1</module>
         <module>webflux-sample1</module>
         <module>web-async-task-sample1</module>
+        <module>aop-sample</module>
+        <module>web-mvc-sample</module>
+        <module>docker-deploy</module>
+        <module>actuator-sample</module>
     </modules>
 
     <dependencyManagement>

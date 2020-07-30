@@ -11,6 +11,9 @@
         <module>dive-mvc</module>
         <module>dive-aop</module>
         <module>dive-mvc-without-boot</module>
+        <module>overview</module>
+        <module>autoconfiguration</module>
+        <module>dive-spring-application</module>
     </modules>
     <packaging>pom</packaging>
 

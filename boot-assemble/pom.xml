@@ -13,6 +13,13 @@
         <module>boot-kafka</module>
         <module>boot-mongodb</module>
         <module>boot-mybatis</module>
+        <module>boot-validate</module>
+        <module>oauth-security</module>
+        <module>boot-jwt</module>
+        <module>boot-jsoup</module>
+        <module>boot-activiti</module>
+        <module>boot-quartz</module>
+        <module>boot-shiro</module>
     </modules>
 
     <packaging>pom</packaging>
