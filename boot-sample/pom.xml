@@ -17,6 +17,8 @@
         <module>web-mvc-sample</module>
         <module>docker-deploy</module>
         <module>actuator-sample</module>
+        <module>data-jpa</module>
+        <module>data-jdbc</module>
     </modules>
 
     <properties>

@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: spring-boot-rabbit
+  rabbitmq:
+    addresses: 192.168.199.120
+    port: 5672
+    username: windeaker
+    password: WINDeaker@0917
+    virtual-host: /
