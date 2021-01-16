@@ -1,0 +1,18 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/windeaker/sprincloud-config.git # 不要使用ssh
+          search-paths: springcloud-config
+          username: windeaker
+          password: windeaker@0917
+          default-label: master
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://localhost:7001/eureka

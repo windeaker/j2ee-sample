@@ -1,6 +1,6 @@
 package aop.sample.test;
 
-import aop.sample.declare_advice.Greeting;
+import aop.sample.other.declare_advice.Greeting;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

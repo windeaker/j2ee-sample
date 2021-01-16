@@ -1,9 +1,9 @@
 package aop.sample.test;
 
-import aop.sample.program_advice.Greeting;
-import aop.sample.program_advice.GreetingBeforeAndAfterAdvice;
-import aop.sample.program_advice.GreetingImpl;
-import aop.sample.program_advice.around_advice.GreetingAroundAdvice;
+import aop.sample.other.program_advice.Greeting;
+import aop.sample.other.program_advice.GreetingBeforeAndAfterAdvice;
+import aop.sample.other.program_advice.GreetingImpl;
+import aop.sample.other.program_advice.around_advice.GreetingAroundAdvice;
 import org.junit.Test;
 import org.springframework.aop.framework.ProxyFactory;
 

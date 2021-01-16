@@ -1,0 +1,7 @@
+server:
+  port: 8843
+  ssl:
+    key-password: WINDeaker@0917
+    key-alias: windeaker_server
+    key-store-type: jks
+    key-store: classpath:windeaker_server.keystore

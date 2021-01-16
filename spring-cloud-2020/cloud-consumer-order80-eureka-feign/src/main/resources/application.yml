@@ -1,0 +1,19 @@
+
+spring:
+  application:
+    name: cloud-consumer-order
+eureka:
+  client:
+    register-with-eureka: true
+    # 如果是eureka集群，此项必须设置为true，以配合ribbon负载均衡
+    fetch-registry: true
+    service-url:
+      # 单机版
+      defaultZone: http://localhost:7001/eureka/
+      # 集群版
+      # defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/,http://eureka7004.com:7004/eureka/
+logging:
+  level:
+    cloud.consumer.order80.eureka.service.PaymentFeignService: debug
+server:
+  port: 80

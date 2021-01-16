@@ -1,0 +1,15 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://dubbo.apache.org/schema/dubbo
+        http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <context:component-scan base-package="spring.hello.world.consumer.*"></context:component-scan>
+
+    <dubbo:application name="spring-hello-world-consumer"/>
+    <dubbo:registry address="zookeeper://192.168.199.120:2181"/>
+    <!-- 声明需要调用远程服务的接口；生成远程服务代理 -->
+    <dubbo:reference id="userService" interface="hello.world.common.api.service.UserService"/>
+</beans>

@@ -1,6 +1,6 @@
 package rabbitmq.work_model.simple;
 
-import rabbitmq.work_model.ConnectionUtil;
+import rabbit.simple.ConnectionUtil;
 import com.rabbitmq.client.*;
 
 import java.io.IOException;

@@ -1,0 +1,13 @@
+# custom initializer
+org.springframework.context.ApplicationContextInitializer=\
+dive.spring.AfterApplicationContextInitializer,\
+dive.spring.HelloworldApplicationContextInitializer
+
+# custom application listeners
+org.springframework.context.ApplicationListener=\
+dive.spring.AfterHelloWorldApplicationListener,\
+dive.spring.HelloWorldApplicationListener
+
+# custom Run Listeners
+org.springframework.boot.SpringApplicationRunListener=\
+dive.spring.HelloWorldRunListener

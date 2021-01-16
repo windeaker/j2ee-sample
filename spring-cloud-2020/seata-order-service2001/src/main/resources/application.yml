@@ -1,0 +1,40 @@
+server:
+  port: 2001
+
+spring:
+  application:
+    name: seata-order-service
+  cloud:
+    alibaba:
+      seata:
+        application-id: ${spring.application.name} # Seata 应用编号，默认为 ${spring.application.name}
+        tx-service-group: ${spring.application.name}-group # Seata 事务组编号，用于 TC 集群名
+        # 服务配置项，对应 ServiceProperties 类
+        service:
+          # 虚拟组和分组的映射
+          vgroup-mapping:
+            seata-order-service-group: default
+          # 分组和 Seata 服务的映射
+          grouplist:
+            default: 192.168.199.120:8091
+    nacos:
+      discovery:
+        server-addr: 192.168.199.120:8848
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.199.120:3306/seata_order?serverTimezone=GMT%2B8
+    username: root
+    password: WINDeaker@0917
+    seata: true
+
+feign:
+  hystrix:
+    enabled: false
+
+logging:
+  level:
+    io:
+      seata: info
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml

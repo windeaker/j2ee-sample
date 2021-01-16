@@ -9,11 +9,14 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>dive-mvc</module>
-        <module>dive-aop</module>
-        <module>dive-mvc-without-boot</module>
         <module>overview</module>
         <module>autoconfiguration</module>
-        <module>dive-spring-application</module>
+        <module>spring-webmvc</module>
+        <module>springboot-webmvc</module>
+        <module>springboot-view</module>
+        <module>springboot-rest</module>
+        <module>spring-application</module>
+        <module>externalized-configuration</module>
     </modules>
     <packaging>pom</packaging>
 

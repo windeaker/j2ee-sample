@@ -1,0 +1,16 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+    <!--微服务名称，全局唯一-->
+    <dubbo:application name="spring-hello-world-provider"/>
+    <!--指定注册中心位置-->
+    <dubbo:registry address="zookeeper://192.168.199.120:2181"/>
+    <!--  指定通信规则(通信协议：通信端口)  -->
+    <dubbo:protocol name="dubbo" port="20890"/>
+    <!--  暴露的服务 ref：指向服务真正的实现对象  -->
+    <dubbo:service interface="hello.world.common.api.service.UserService" ref="userServiceImpl"/>
+    <!--  将暴露的服务实现对象交给spring 管理  -->
+    <bean id="userServiceImpl" class="spring.hello.world.provider.service.impl.UserServiceImpl"/>
+</beans>

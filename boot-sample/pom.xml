@@ -10,7 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>security-sample1</module>
-        <module>websocket-sample1</module>
+        <module>websocket-sample</module>
         <module>webflux-sample1</module>
         <module>web-async-task-sample1</module>
         <module>aop-sample</module>
@@ -19,6 +19,15 @@
         <module>actuator-sample</module>
         <module>data-jpa</module>
         <module>data-jdbc</module>
+        <module>logger-sample</module>
+        <module>web-mvc-http2-sample</module>
+        <module>custom-stater</module>
+        <module>custom-starter-sample</module>
+        <module>boot-shutdown</module>
+        <module>mvc-inte-excep</module>
+        <module>boot-jar-startup-sample</module>
+        <module>boot-https</module>
+        <module>boot-cache-demo</module>
     </modules>
 
     <properties>
@@ -46,6 +55,12 @@
                 <version>2.1.1</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>3.4.0</version>
+            </dependency>
+
             <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
             <dependency>
                 <groupId>mysql</groupId>
@@ -56,6 +71,11 @@
                 <groupId>com.google.code.gson</groupId>
                 <artifactId>gson</artifactId>
                 <version>2.8.6</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.12</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

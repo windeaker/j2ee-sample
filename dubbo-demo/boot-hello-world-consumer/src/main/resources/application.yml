@@ -1,0 +1,14 @@
+server:
+  port: 8989
+
+dubbo:
+  application:
+    name: boot-hello-world-consumer
+  registry:
+    address: zookeeper://192.168.199.120:2181
+
+
+spring:
+  application:
+    name: boot-hello-world-consumer
+

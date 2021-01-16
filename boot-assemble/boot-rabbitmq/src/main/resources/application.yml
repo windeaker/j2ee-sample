@@ -4,6 +4,6 @@ spring:
   rabbitmq:
     addresses: 192.168.199.120
     port: 5672
-    username: windeaker
-    password: WINDeaker@0917
+    username: guest
+    password: guest
     virtual-host: /
