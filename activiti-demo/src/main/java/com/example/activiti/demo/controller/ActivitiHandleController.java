@@ -1,14 +1,19 @@
-package com.example.activiti.demo;
+package com.example.activiti.demo.controller;
 
 import org.activiti.engine.*;
-import org.activiti.engine.runtime.ProcessInstance;
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
-@SpringBootTest
-class ActivitiDemoApplicationTests {
+/**
+ * @author xiong qiang
+ * @Description TODO
+ * @Date 2021/1/26
+ */
+@RestController
+public class ActivitiHandleController {
+
 
     /**
      * 流程引擎
@@ -49,13 +54,5 @@ class ActivitiDemoApplicationTests {
     @Resource
     private HistoryService historyService;
 
-    @Test
-    void contextLoads() {
-    }
-
-    @Test
-    void createNewActivity() {
-        ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("vacation");
-    }
 
 }
