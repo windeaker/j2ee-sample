@@ -13,11 +13,12 @@ import javax.websocket.server.ServerEndpoint;
  * @Date 20/8/8
  */
 @Controller
-@ServerEndpoint("/")
+@ServerEndpoint("/ws1")
 public class WebsocketServerEndpoint {
 
     private Logger logger= LoggerFactory.getLogger(getClass());
 
+    @OnOpen
     public void onOpen(Session session, EndpointConfig config){
         logger.info("[onOpen][session({}) 接入]", session);
 
@@ -25,7 +26,7 @@ public class WebsocketServerEndpoint {
 
     @OnMessage
     public void onMessage(Session session, String message) {
-        logger.info("[onOpen][session({}) 接收到一条消息({})]", session, message); // 生产环境下，请设置成 debug 级别
+        logger.info("[OnMessage][session({}) 接收到一条消息({})]", session, message); // 生产环境下，请设置成 debug 级别
     }
 
     @OnClose
@@ -35,7 +36,7 @@ public class WebsocketServerEndpoint {
 
     @OnError
     public void onError(Session session, Throwable throwable) {
-        logger.info("[onClose][session({}) 发生异常]", session, throwable);
+        logger.info("[OnError][session({}) 发生异常]", session, throwable);
     }
 
 }
