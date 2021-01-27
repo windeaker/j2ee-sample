@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="GBK" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.activiti.org/test" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:yaoqiang="http://bpmn.sourceforge.net" exporter="camunda modeler" exporterVersion="2.7.1" expressionLanguage="http://www.w3.org/1999/XPath" id="m1515296568080" name="" targetNamespace="http://www.activiti.org/test" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://bpmn.sourceforge.net/schemas/BPMN20.xsd">
-  <process id="vacationProcess" isClosed="false" isExecutable="true" name="请假流程" processType="None">
+  <process id="vacationProcess" isClosed="false" isExecutable="true" name="vocation_process" processType="None">
     <extensionElements>
       <yaoqiang:description/>
       <yaoqiang:pageFormat height="841.8897637795276" imageableHeight="831.8897637795276" imageableWidth="588.1102362204724" imageableX="5.0" imageableY="5.0" orientation="0" width="598.1102362204724"/>
@@ -10,7 +10,7 @@
       <outgoing>flow1</outgoing>
       <outputSet/>
     </startEvent>
-    <userTask activiti:candidateGroups="empGroup" activiti:exclusive="true" completionQuantity="1" id="usertask1" implementation="##unspecified" isForCompensation="false" name="填写申请" startQuantity="1">
+    <userTask activiti:candidateGroups="empGroup" activiti:exclusive="true" completionQuantity="1" id="usertask1" implementation="##unspecified" isForCompensation="false" name="濉啓鐢宠" startQuantity="1">
       <incoming>flow1</incoming>
       <outgoing>flow2</outgoing>
     </userTask>
@@ -19,11 +19,11 @@
       <outgoing>flow3</outgoing>
       <outgoing>flow5</outgoing>
     </exclusiveGateway>
-    <userTask activiti:candidateGroups="manageGroup" activiti:exclusive="true" completionQuantity="1" id="usertask2" implementation="##unspecified" isForCompensation="false" name="总监审批" startQuantity="1">
+    <userTask activiti:candidateGroups="manageGroup" activiti:exclusive="true" completionQuantity="1" id="usertask2" implementation="##unspecified" isForCompensation="false" name="鎬荤洃瀹℃壒" startQuantity="1">
       <incoming>flow3</incoming>
       <outgoing>flow4</outgoing>
     </userTask>
-    <userTask activiti:candidateGroups="dirGroup" activiti:exclusive="true" completionQuantity="1" id="usertask3" implementation="##unspecified" isForCompensation="false" name="经理审批" startQuantity="1">
+    <userTask activiti:candidateGroups="dirGroup" activiti:exclusive="true" completionQuantity="1" id="usertask3" implementation="##unspecified" isForCompensation="false" name="缁忕悊瀹℃壒" startQuantity="1">
       <incoming>flow5</incoming>
       <outgoing>flow6</outgoing>
     </userTask>
