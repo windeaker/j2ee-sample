@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.simple.mapper.SysAccountMapper">
+  <resultMap id="BaseResultMap" type="mybatis.simple.pojo.SysAccount">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="deleted" jdbcType="TINYINT" property="deleted" />
+    <result column="cst_created" jdbcType="TIMESTAMP" property="cstCreated" />
+    <result column="cst_modified" jdbcType="TIMESTAMP" property="cstModified" />
+    <result column="account" jdbcType="VARCHAR" property="account" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="pwd_digest" jdbcType="VARCHAR" property="pwdDigest" />
+    <result column="digest_salt" jdbcType="VARCHAR" property="digestSalt" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, deleted, cst_created, cst_modified, account, nick_name, pwd_digest, digest_salt
+  </sql>
+  <select id="selectByExample" parameterType="mybatis.simple.pojo.SysAccountExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from sys_account
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_account
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sys_account
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="mybatis.simple.pojo.SysAccountExample">
+    delete from sys_account
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="mybatis.simple.pojo.SysAccount">
+    insert into sys_account (id, deleted, cst_created, 
+      cst_modified, account, nick_name, 
+      pwd_digest, digest_salt)
+    values (#{id,jdbcType=INTEGER}, #{deleted,jdbcType=TINYINT}, #{cstCreated,jdbcType=TIMESTAMP}, 
+      #{cstModified,jdbcType=TIMESTAMP}, #{account,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, 
+      #{pwdDigest,jdbcType=VARCHAR}, #{digestSalt,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="mybatis.simple.pojo.SysAccount">
+    insert into sys_account
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="deleted != null">
+        deleted,
+      </if>
+      <if test="cstCreated != null">
+        cst_created,
+      </if>
+      <if test="cstModified != null">
+        cst_modified,
+      </if>
+      <if test="account != null">
+        account,
+      </if>
+      <if test="nickName != null">
+        nick_name,
+      </if>
+      <if test="pwdDigest != null">
+        pwd_digest,
+      </if>
+      <if test="digestSalt != null">
+        digest_salt,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="deleted != null">
+        #{deleted,jdbcType=TINYINT},
+      </if>
+      <if test="cstCreated != null">
+        #{cstCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cstModified != null">
+        #{cstModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="account != null">
+        #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null">
+        #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="pwdDigest != null">
+        #{pwdDigest,jdbcType=VARCHAR},
+      </if>
+      <if test="digestSalt != null">
+        #{digestSalt,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="mybatis.simple.pojo.SysAccountExample" resultType="java.lang.Long">
+    select count(*) from sys_account
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update sys_account
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.deleted != null">
+        deleted = #{record.deleted,jdbcType=TINYINT},
+      </if>
+      <if test="record.cstCreated != null">
+        cst_created = #{record.cstCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.cstModified != null">
+        cst_modified = #{record.cstModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.account != null">
+        account = #{record.account,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nickName != null">
+        nick_name = #{record.nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pwdDigest != null">
+        pwd_digest = #{record.pwdDigest,jdbcType=VARCHAR},
+      </if>
+      <if test="record.digestSalt != null">
+        digest_salt = #{record.digestSalt,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update sys_account
+    set id = #{record.id,jdbcType=INTEGER},
+      deleted = #{record.deleted,jdbcType=TINYINT},
+      cst_created = #{record.cstCreated,jdbcType=TIMESTAMP},
+      cst_modified = #{record.cstModified,jdbcType=TIMESTAMP},
+      account = #{record.account,jdbcType=VARCHAR},
+      nick_name = #{record.nickName,jdbcType=VARCHAR},
+      pwd_digest = #{record.pwdDigest,jdbcType=VARCHAR},
+      digest_salt = #{record.digestSalt,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="mybatis.simple.pojo.SysAccount">
+    update sys_account
+    <set>
+      <if test="deleted != null">
+        deleted = #{deleted,jdbcType=TINYINT},
+      </if>
+      <if test="cstCreated != null">
+        cst_created = #{cstCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cstModified != null">
+        cst_modified = #{cstModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="account != null">
+        account = #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null">
+        nick_name = #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="pwdDigest != null">
+        pwd_digest = #{pwdDigest,jdbcType=VARCHAR},
+      </if>
+      <if test="digestSalt != null">
+        digest_salt = #{digestSalt,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="mybatis.simple.pojo.SysAccount">
+    update sys_account
+    set deleted = #{deleted,jdbcType=TINYINT},
+      cst_created = #{cstCreated,jdbcType=TIMESTAMP},
+      cst_modified = #{cstModified,jdbcType=TIMESTAMP},
+      account = #{account,jdbcType=VARCHAR},
+      nick_name = #{nickName,jdbcType=VARCHAR},
+      pwd_digest = #{pwdDigest,jdbcType=VARCHAR},
+      digest_salt = #{digestSalt,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

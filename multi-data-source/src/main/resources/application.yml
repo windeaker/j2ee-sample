@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    prism:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      username: root
+      password: Aa@111111
+      url: jdbc:mysql://120.77.156.109:3306/prism?useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true&autoReconnect=true
+      type: com.alibaba.druid.pool.DruidDataSource
+    prism-ms:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: Aa@111111
+      url: jdbc:mysql://120.77.156.109:3306/prism_ms?useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true&autoReconnect=true
+      type: com.alibaba.druid.pool.DruidDataSource
+
+logging:
+  file: /log.txt
+  level:
+    com.example.demo.multidatasource.common.config.druid.DataSourceContextHolder : debug
